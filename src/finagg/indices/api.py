@@ -35,6 +35,7 @@ class API(ABC):
     def get_ticker_list(cls, *, user_agent: None | str = None) -> list[str]:
         """List the tickers in the index."""
         df = cls.get(user_agent=user_agent)
+        print(df.info())
         return df["ticker"].tolist()
 
 
@@ -120,14 +121,30 @@ class Nasdaq100(API):
         tbl_io = io.StringIO(str(tbl))
         (df,) = pd.read_html(tbl_io)
         df = pd.DataFrame(df)
-        return df.rename(
-            columns={
+
+        # **************************************************************
+        # 2024.12.07
+        # this function has been failing because it looks like "Ticker" as a field is not always available
+        # could probably clean this up
+
+        field_names = {
+            "Company": "company",
+            "Ticker": "ticker",
+            "GICS Sector": "industry",
+            "GICS Sub-Industry": "sub_industry"
+        }
+
+        if "Symbol" in df.columns and all(c not in df.columns for c in ('ticker', 'ticker')):
+            field_names = {
                 "Company": "company",
-                "Ticker": "ticker",
+                "Symbol": "ticker",
                 "GICS Sector": "industry",
                 "GICS Sub-Industry": "sub_industry",
             }
-        )
+
+        return df.rename(columns=field_names)
+
+        # **************************************************************
 
 
 class SP500(API):

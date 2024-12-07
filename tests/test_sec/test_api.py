@@ -1,4 +1,4 @@
-import finagg
+import src.finagg as finagg
 
 
 def test_get_cik() -> None:

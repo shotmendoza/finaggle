@@ -6,7 +6,7 @@ import pytest
 from sqlalchemy.engine import Engine
 from sqlalchemy.exc import IntegrityError
 
-import finagg
+from src import finagg
 
 
 @pytest.fixture

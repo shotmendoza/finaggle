@@ -3,7 +3,7 @@ from typing import Generator
 import pytest
 from sqlalchemy.engine import Engine
 
-import finagg
+import src.finagg as finagg
 
 
 @pytest.fixture

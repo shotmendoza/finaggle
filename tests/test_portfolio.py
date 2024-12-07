@@ -1,6 +1,6 @@
 import pytest
 
-from finagg.portfolio import Portfolio, Position
+from src.finagg.portfolio import Portfolio, Position
 
 CHANGE_MULTIPLE = 0.5
 INITIAL_CASH = 10_000

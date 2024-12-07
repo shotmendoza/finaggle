@@ -73,7 +73,7 @@ Get Federal Reserve Economic Data (FRED).
 ...   output_type=4
 ... ).head(5)
   realtime_start realtime_end        date  value series_id
-0     1949-04-22   1953-02-26  1949-03-01  169.5  CPIAUCNS
+0     1949-04-22   1953-02-26  1949-0o3-01  169.5  CPIAUCNS
 1     1949-05-23   1953-02-26  1949-04-01  169.7  CPIAUCNS
 2     1949-06-24   1953-02-26  1949-05-01  169.2  CPIAUCNS
 3     1949-07-22   1953-02-26  1949-06-01  169.6  CPIAUCNS

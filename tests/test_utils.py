@@ -2,7 +2,7 @@ import pandas as pd
 import pytest
 import sqlalchemy as sa
 
-import finagg
+import src.finagg as finagg
 
 
 @pytest.mark.parametrize(

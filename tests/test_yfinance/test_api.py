@@ -1,5 +1,5 @@
-import finagg
+import src.finagg
 
 
 def test_get() -> None:
-    finagg.yfinance.api.get("AAPL")
+    src.finagg.yfinance.api.get("AAPL")

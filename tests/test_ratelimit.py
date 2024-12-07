@@ -4,13 +4,14 @@ from unittest.mock import patch
 import pytest
 import requests
 
-import finagg.ratelimit
+import src.finagg as finagg
+import src.finagg.ratelimit as ratelimit
 
 LIMIT = 3
 PERIOD = 10
 
 
-class StrictLimiter(finagg.ratelimit.RateLimit):
+class StrictLimiter(ratelimit.RateLimit):
     def eval(self, response: requests.Response) -> float | dict[str, float]:
         if hasattr(response, "from_cache") and response.from_cache:
             return 0.0

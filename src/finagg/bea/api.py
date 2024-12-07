@@ -67,17 +67,21 @@ class API(ABC):
     """Interface for BEA Dataset APIs."""
 
     #: Request API URL.
-    name: ClassVar[str]
+    name: ClassVar[str]  # has the name or (source) like in mine. I think I liked having report level granularity so
+    # let's see how we do this once we get this thing working
 
     @classmethod
     @abstractmethod
     def get(cls, *args: Any, **kwargs: Any) -> pd.DataFrame:
         """Main dataset API method."""
+        # akin to process() in the script that I previously built
 
     @classmethod
     def get_parameter_list(cls, /, *, api_key: None | str = None) -> pd.DataFrame:
         """Return the list of parameters associated with the dataset API."""
         return _get_parameter_list(cls.name, api_key=api_key)
+
+        # seems like he has functionality for pulling the needed parameters (interval, period) in Yahoo
 
     @classmethod
     def get_parameter_values(
@@ -86,9 +90,12 @@ class API(ABC):
         """Return all possible parameter values associated with the dataset API."""
         return _get_parameter_values(cls.name, param, api_key=api_key)
 
+    # He looks to be creating some kind of Enum for validation to make sure the request is within the possible values
+
 
 class FixedAssets(API):
     """US fixed assets (assets for long-term use)."""
+    # First type of report from the BEA API
 
     name = "FixedAssets"
 

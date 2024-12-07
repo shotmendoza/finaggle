@@ -22,7 +22,7 @@ def is_valid_fiscal_seq(seq: list[int], /) -> bool:
         This fiscal quarter difference sequence is synonymous with
         the quarter sequence [Q2, Q3, Q1, Q2, Q3].
 
-        >>> from finagg.frame import is_valid_fiscal_seq
+        >>> from finaggle.frame import is_valid_fiscal_seq
         >>> is_valid_fiscal_seq([1, 2, 1, 1])
         True
 
@@ -59,7 +59,7 @@ class FiscalDelta:
     Examples:
         Get the total number of quarters from a fiscal delta.
 
-        >>> from finagg.frame import FiscalDelta
+        >>> from finaggle.frame import FiscalDelta
         >>> delta = FiscalDelta(2, 2)
         >>> int(delta)
         10

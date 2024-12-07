@@ -1,4 +1,4 @@
-import finagg
+import src.finagg as finagg
 
 
 def test_djia_get() -> None:
@@ -7,6 +7,11 @@ def test_djia_get() -> None:
 
 
 def test_get_ticker_set() -> None:
+    """Backward engineering this, but api.get_ticker_set() gets data from all the popular indexes
+
+    I think this is currently failing because the Nasdaq100 object error
+
+    """
     tickers = finagg.indices.api.get_ticker_set()
     assert "AAPL" in tickers
 
