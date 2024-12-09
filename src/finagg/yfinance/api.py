@@ -2,6 +2,7 @@
 
 import logging
 from datetime import datetime, timedelta
+from typing import Literal
 
 import pandas as pd
 import yfinance as yf
@@ -15,8 +16,8 @@ def get(
     *,
     start: None | str = None,
     end: None | str = None,
-    interval: str = "1d",
-    period: str = "max",
+    interval: Literal['1m', '2m', '5m', '15m', '30m', '60m', '90m', '1h', '1d', '5d', '1wk', '1mo', '3mo'] | str = "1d",
+    period: Literal['1d', '5d', '1mo', '3mo', '6mo', '1y', '2y', '5y', '10y', 'ytd', 'max'] | str = "max",
     prepost: bool = False,
     actions: bool = False,
     auto_adjust: bool = True,
