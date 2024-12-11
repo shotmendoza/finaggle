@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "finagg"
+name = "finaggle"
 description = "Data aggregation with popular and free financial APIs."
 authors = [{name = "Andrew B."}]
 classifiers = [
@@ -46,7 +46,7 @@ requires-python = ">=3.10"
 finagg = "finagg.__main__:main"
 
 [project.urls]
-Repository = "https://github.com/theOGognf/finagg"
+Repository = "https://github.com/shotmendoza/finaggle"
 Documentation = "https://theogognf.github.io/finagg/"
 
 [project.optional-dependencies]
