@@ -35,7 +35,6 @@ class API(ABC):
     def get_ticker_list(cls, *, user_agent: None | str = None) -> list[str]:
         """List the tickers in the index."""
         df = cls.get(user_agent=user_agent)
-        print(df.info())
         return df["ticker"].tolist()
 
 
